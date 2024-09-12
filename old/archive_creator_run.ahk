@@ -26,8 +26,11 @@
     parentFolder := RegExReplace(firstItem, "\\[^\\]*$") ; Parent folder path for archive
     archivePath := parentFolder . "\Archive.zip"  ; Define the zip path
 
-    FileAppend("", archivePath) ; create empty zip folder
-    zipFile := shell.NameSpace(archivePath)
+    ; Prepare the file list to compress
+    fileList := ""
+    for file in selectedFiles {
+        fileList .= '"' StrReplace(file.Path, parentFolder . "\") '" '
+    }
 
-    zipFile.CopyHere(selectedFiles)
+    Run('cmd.exe /c cd /d "' parentFolder '" && tar -a -cf "' archivePath '" ' fileList,, "Hide")
 }
