@@ -25,13 +25,21 @@
 
 AutoHotkey shortcuts for creating & extracting an arhive
 
-Bonus: shorcut for open with code
+Bonus: shorcut for `open with VS code`
 
 By [Teodor Neagoe](https://github.com/Teoneag)
 
 </div>
-<img src="gifs/AutoHotkey-Arhive-Shortcuts Preview.gif" alt="AutoHotkey-Arhive-Shortcuts"/>
 </div>
+
+## Functions Preview
+
+| Arhive example | Unzip example |
+|----------------|---------------|
+| <img src="gifs/arhive.gif" alt="AutoHotkey-Arhive-Shortcuts"/> | <img src="gifs/unzip.gif" alt="AutoHotkey-Unzip-Shortcuts"/> |
+
+
+
 
 ## Getting Started
 
@@ -57,11 +65,11 @@ git clone https://github.com/Teoneag/AutoHotkey-Arhive-Shortcuts
 
 ## Features
 
-### 1. Create arhive shortcut: Ctrl + Shift + e
+### 1. Create arhive shortcut: `Ctrl + Shift + e`
 
-### 2. Extract arhive shortcut: Ctrl + e
+### 2. Extract arhive shortcut: `Ctrl + e`
 
-### 3. Open with code shortcut: Ctrl + Shift + c
+### 3. Open with code shortcut: `Ctrl + Shift + c`
 
 ## Plan -> Actual: 
 
@@ -75,3 +83,7 @@ Chronological order. Planned time -> actual time
 ## ToDo
 
 - make open with code work directly, without lunching cmd
+
+## Special Thanks
+
+Special thanks to [Casian](https://github.com/ChiriacCasian) for inspiring me to do this project. To view his version, click [here](https://github.com/ChiriacCasian/AHK_custom_shortcuts/tree/main)
