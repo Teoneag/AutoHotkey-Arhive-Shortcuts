@@ -1,3 +1,5 @@
+; Ctrl + Shift + e: Arhive all the selected files & folders
+
 #Requires AutoHotkey v2.0
 
 ^+e:: { ; Ctrl + Shift + e
@@ -8,7 +10,7 @@
 
     shell := ComObject("Shell.Application")
 
-    ; Get the selected files and folders in the current active window in Explorer
+    ; Get the selected files & folders in the current active window in Explorer
     selectedFiles := []
     for window in shell.Windows {
         if window.hwnd = WinExist("A") {  ; Make sure it's the active window

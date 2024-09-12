@@ -1,4 +1,4 @@
-; Extract the selected zip when Ctrl + e is pressed
+; Ctrl + e: Extract the selected zip
 
 #Requires AutoHotkey v2.0
 
