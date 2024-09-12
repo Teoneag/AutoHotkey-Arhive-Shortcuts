@@ -1,7 +1,7 @@
-#Requires AutoHotkey v2.0
-
 ; Ctrl + e: Extract the selected zip
 ; Ctrl + Shift + e: Arhive all the selected files & folders
+
+#Requires AutoHotkey v2.0
 
 ^+e:: { ; Ctrl + Shift + e
     ; Exit the script if File Explorer is not active
