@@ -1,9 +1,11 @@
+; Extract the selected zip when Ctrl + e is pressed
+
 #Requires AutoHotkey v2.0
 
 ^e:: { ; Ctrl + e
     ; Exit the script if File Explorer is not active
     if !WinActive("ahk_class CabinetWClass") {
-        return  
+        return
     }
 
     shell := ComObject("Shell.Application")
