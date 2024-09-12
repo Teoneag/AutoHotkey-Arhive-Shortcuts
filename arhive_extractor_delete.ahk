@@ -27,12 +27,7 @@
     ; remove everything after the last \
     extractFolder := RegExReplace(selectedFile, "\\[^\\]*$")
 
-    try {
-        zipFolder := shell.NameSpace(selectedFile)
-        extractDestination := shell.NameSpace(extractFolder)
+    RunWait('cmd.exe /C tar -xf "' selectedFile '" -C "' extractFolder '"',, "Hide")
 
-        extractDestination.CopyHere(zipFolder.Items())
-    } catch {
-        MsgBox "An error occurred during extraction."
-    }
+    FileDelete(selectedFile)
 }
