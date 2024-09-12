@@ -32,5 +32,25 @@
 
     extractDestination.CopyHere(zipFolder.Items())
 
-    FileDelete(selectedFile)
+    ; wait for the zip to not be in use, then delete
+    maxAttempts := 3600 ; Max wait time of 1 hour
+    while deleteIfNotInUse(selectedFile, maxAttempts) && maxAttempts > 0 {
+        maxAttempts--
+        Sleep 1000
+    }
+}
+
+deleteIfNotInUse(filePath, nr) {
+    try { ; Try to open the file in read/write mode
+        file := FileOpen(filePath, "rw")
+        if !IsObject(file) {
+            return true ; File is in use
+        }
+        file.Close()
+        FileDelete(filePath)
+        MsgBox nr
+        return false ; File is not in use
+    } catch {
+        return true ; Any error indicates the file is in use
+    }
 }
