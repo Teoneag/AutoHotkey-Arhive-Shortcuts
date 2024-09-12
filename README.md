@@ -6,14 +6,14 @@
 ██╔══██║██║   ██║   ██║   ██║   ██║██╔══██║██║   ██║   ██║   ██╔═██╗ ██╔══╝    ╚██╔╝  
 ██║  ██║╚██████╔╝   ██║   ╚██████╔╝██║  ██║╚██████╔╝   ██║   ██║  ██╗███████╗   ██║   
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝   ╚═╝   
-                                                                                      
+
  █████╗ ██████╗ ██╗  ██╗██╗██╗   ██╗███████╗
 ██╔══██╗██╔══██╗██║  ██║██║██║   ██║██╔════╝
-███████║██████╔╝███████║██║██║   ██║█████╗  
-██╔══██║██╔══██╗██╔══██║██║╚██╗ ██╔╝██╔══╝  
+███████║██████╔╝███████║██║██║   ██║█████╗ 
+██╔══██║██╔══██╗██╔══██║██║╚██╗ ██╔╝██╔══╝ 
 ██║  ██║██║  ██║██║  ██║██║ ╚████╔╝ ███████╗
 ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝
-                                            
+
 ███████╗██╗  ██╗ ██████╗ ██████╗ ████████╗ ██████╗██╗   ██╗████████╗███████╗
 ██╔════╝██║  ██║██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██║   ██║╚══██╔══╝██╔════╝
 ███████╗███████║██║   ██║██████╔╝   ██║   ██║     ██║   ██║   ██║   ███████╗
@@ -23,7 +23,9 @@
 </pre>
 <div align="right">
 
-**<font color="red">ToDo add description</font>**
+AutoHotkey shortcuts for creating & extracting an arhive
+
+Bonus: shorcut for open with code
 
 By [Teodor Neagoe](https://github.com/Teoneag)
 
@@ -36,6 +38,7 @@ By [Teodor Neagoe](https://github.com/Teoneag)
 ### 0. Prerequisites
 
 - Os: Windows
+- [AutoHotkey v2](https://www.autohotkey.com/v2/)
 
 ### 1. Clone the repository
 
@@ -43,27 +46,22 @@ By [Teodor Neagoe](https://github.com/Teoneag)
 git clone https://github.com/Teoneag/AutoHotkey-Arhive-Shortcuts
 ```
 
-### 2. Build & run
+### 2. Usage
 
-You can run it directly from gradle
-```bash
-./gradlew run
-```
-Or alternatively, first build it
-```bash
-./gradlew build
-```
-And then run it
-```bash
-java -jar app/build/libs/app.jar
-```
-Or you can use IntelliJ IDEA to run it. (open the project and run the App class)
+- To use, simply double-click the desired `.ahk` file.
+- If you want the shortcuts to remain available even after reinstalling Windows, copy the desired `.ahk` file to the Windows Startup folder.
+  - To locate this folder, press `Windows + R` to open the Run dialog box, then type:
+    ```
+    shell:startup
+    ```
 
 ## Features
 
-## Task
+### 1. Create arhive shortcut: Ctrl + Shift + e
 
-- 
+### 2. Extract arhive shortcut: Ctrl + e
+
+### 3. Open with code shortcut: Ctrl + Shift + c
 
 ## Plan -> Actual: 
 
@@ -71,15 +69,9 @@ Chronological order. Planned time -> actual time
 - make the arhive creator in a smarter way
 - rename folder + improve readme
 - shortcut for open with code
+- make the open with code open the selected folder, and if not the opened folder in file explorer
+- fix readme
 
 ## ToDo
 
-- make the open with code open the selected folder, and if not the opened folder in file explorer
-- fix readme
 - make open with code work directly, without lunching cmd
-  
-- understand task + read resources, similar projects + make plan: 1h ->
-- project setup: 10m ->
-- test, fix & write tests 3h -> 
-- documentation: 30m ->
-  - GitHub description
