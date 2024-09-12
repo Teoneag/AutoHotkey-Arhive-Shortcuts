@@ -27,7 +27,7 @@
     ; remove everything after the last \
     extractFolder := RegExReplace(selectedFile, "\\[^\\]*$")
 
-    RunWait('cmd.exe /C tar -xf "' selectedFile '" -C "' extractFolder '"',, "Hide")
+    RunWait('cmd.exe /c tar -xf "' selectedFile '" -C "' extractFolder '"',, "Hide")
 
     FileDelete(selectedFile)
 }

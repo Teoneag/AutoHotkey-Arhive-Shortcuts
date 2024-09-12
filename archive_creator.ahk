@@ -24,11 +24,14 @@
             ; Prepare the file list to compress
             fileList := ""
             for file in selectedFiles {
-                fileList .= '"' file.Path '" '  ; Add quotes around each file path
+                relativeFile := StrReplace(file.Path, parentFolder . "\")
+                fileList .= '"' relativeFile '" '  ; Add relative path
             }
 
+            MsgBox (parentFolder . "; " . archivePath . "; " . fileList)
+
             ; Run tar to create the archive
-            Run('cmd.exe /C tar -a -cf "' archivePath '" ' fileList,, "Hide")
+            Run('cmd.exe /c cd /d "' parentFolder '" && tar -a -cf "' archivePath '" ' fileList,, "Hide")
 
             break  ; Exit the loop once we find the active window
         }
