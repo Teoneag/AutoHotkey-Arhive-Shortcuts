@@ -1,6 +1,7 @@
 ; Ctrl + Shift + s: make shortcut from the selected file
 
 #Requires AutoHotkey v2.0
+#Include utils.ahk
 
 ^+s:: { ; Ctrl + Shift + s
     ; Exit the script if File Explorer is not active
@@ -9,17 +10,9 @@
     }
 
     ; Get the selected folder in the current active window in File Explorer
-    selectedFile := ""
-    for window in ComObject("Shell.Application").Windows {
-        if window.hwnd = WinExist("A") {  ; Make sure it's the active window
-            if window.Document.SelectedItems.Count > 0 {
-                selectedFile := window.Document.SelectedItems.Item(0).Path
-            }
-            break  ; Exit the loop once we find the active window
-        }
-    }
+    selectedFile := GetSelectedFile()    
 
-    if (selectedFile == "") {
+    if (selectedFile == ""|| !FileExist(selectedFile)) {
         MsgBox("No file selected. Please select a file to create a shortcut.")
         return
     }
