@@ -57,7 +57,7 @@ git clone https://github.com/Teoneag/AutoHotkey-Arhive-Shortcuts
 ### 2. Usage
 
 - To use, simply double-click the desired `.ahk` file.
-- If you want the shortcuts to remain available even after reinstalling Windows, copy the desired `.ahk` file to the Windows Startup folder.
+- If you want the shortcuts to remain available even after restarting Windows, copy the desired `.ahk` file to the Windows Startup folder.
   - To locate this folder, press `Windows + R` to open the Run dialog box, then type:
     ```
     shell:startup
