@@ -79,6 +79,7 @@ Chronological order. Planned time -> actual time
 - shortcut for open with code
 - make the open with code open the selected folder, and if not the opened folder in file explorer
 - fix readme
+- rename arhive to the actual file name.zip: 10m -> 9m
 
 ## ToDo
 

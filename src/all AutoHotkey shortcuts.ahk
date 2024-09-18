@@ -29,7 +29,11 @@
 
     firstItem := selectedFiles.Item(0).Path  ; Get the first selected item
     parentFolder := RegExReplace(firstItem, "\\[^\\]*$") ; Parent folder path for archive
-    archivePath := parentFolder . "\Archive.zip"  ; Define the zip path
+    if selectedFiles.Count = 1 { ; If 1 file selected: file.zip; else: Arhive.zip
+        archivePath := parentFolder . "\" . RegExReplace(firstItem, ".*\\") . ".zip"
+    } else {
+        archivePath := parentFolder . "\Archive.zip"
+    }
 
     FileAppend("", archivePath) ; create empty zip folder
     zipFile := shell.NameSpace(archivePath)
