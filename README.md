@@ -71,6 +71,10 @@ git clone https://github.com/Teoneag/AutoHotkey-Arhive-Shortcuts
 
 ### 4. Create shortcut of file/folder `Ctrl + Shift + s`
 
+## Bonus - WebLab Answer Shortcut (Tampermonkey) `Ctrl + Alt + a`
+
+To use this, you need to install [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) and add the script from `shortcut_weblab_answer.js` to it.
+
 ## Plan -> Actual: 
 
 Chronological order. Planned time -> actual time
@@ -84,6 +88,7 @@ Chronological order. Planned time -> actual time
 ## ToDo
 
 - make open with code work directly, without lunching cmd
+- for tampermonkey shortcut weblab answer, fix error on line 19
 
 ## Special Thanks
 
