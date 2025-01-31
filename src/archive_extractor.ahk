@@ -19,7 +19,7 @@
         return
     }
 
-    ; remove everything after the last \
+    ; Remove everything after the last \
     extractFolder := RegExReplace(selectedFile, "\\[^\\]*$")
 
     zipFolder := shell.NameSpace(selectedFile)
@@ -28,4 +28,6 @@
     extractDestination.CopyHere(zipFolder.Items())
 
     FileDelete(selectedFile)
+    ; Refresh the explorer window so the file disappears
+    DllCall("Shell32.dll\SHChangeNotify", "UInt", 0x8000000, "UInt", 0, "Ptr", 0, "Ptr", 0)
 }

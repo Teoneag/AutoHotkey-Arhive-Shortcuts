@@ -84,11 +84,12 @@ Chronological order. Planned time -> actual time
 - make the open with code open the selected folder, and if not the opened folder in file explorer
 - fix readme
 - rename arhive to the actual file name.zip: 10m -> 9m
+- make open with code work directly, without lunching cmd
+- for tampermonkey shortcut weblab answer, fix error on line 19
+- refresh windows explorer window after deleting the zip file: 20m
 
 ## ToDo
 
-- make open with code work directly, without lunching cmd
-- for tampermonkey shortcut weblab answer, fix error on line 19
 
 ## Special Thanks
 

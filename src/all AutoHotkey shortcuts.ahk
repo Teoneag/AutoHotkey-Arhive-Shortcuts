@@ -5,6 +5,7 @@
 
 #Requires AutoHotkey v2.0
 
+; Archive all the selected files & folders
 ^+e:: { ; Ctrl + Shift + e
     ; Exit the script if File Explorer is not active
     if !WinActive("ahk_class CabinetWClass") {
@@ -41,6 +42,7 @@
     zipFile.CopyHere(selectedFiles)
 }
 
+; Extract the selected zip
 ^e:: { ; Ctrl + e
     ; Exit the script if File Explorer is not active
     if !WinActive("ahk_class CabinetWClass") {
@@ -57,7 +59,7 @@
         return
     }
 
-    ; remove everything after the last \
+    ; Remove everything after the last \
     extractFolder := RegExReplace(selectedFile, "\\[^\\]*$")
 
     zipFolder := shell.NameSpace(selectedFile)
@@ -66,8 +68,11 @@
     extractDestination.CopyHere(zipFolder.Items())
 
     FileDelete(selectedFile)
+    ; Refresh the explorer window so the file disappears
+    DllCall("Shell32.dll\SHChangeNotify", "UInt", 0x8000000, "UInt", 0, "Ptr", 0, "Ptr", 0)
 }
 
+; Open selected folder with VS Code
 ^+c:: { ; Ctrl + Shift + c
     ; Exit the script if File Explorer is not active
     if !WinActive("ahk_class CabinetWClass") {
@@ -95,6 +100,7 @@
     }
 }
 
+; Make shortcut from the selected file
 ^+s:: { ; Ctrl + Shift + s
     ; Exit the script if File Explorer is not active
     if !WinActive("ahk_class CabinetWClass") {
@@ -118,6 +124,7 @@
     shortcut.Save()
 }
 
+; Get the selected file in the current active window in Explorer
 GetSelectedFile() {
     for window in ComObject("Shell.Application").Windows {
         if window.hwnd = WinExist("A") {  ; Make sure it's the active window
